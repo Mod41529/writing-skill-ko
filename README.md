@@ -8,6 +8,19 @@ A Claude Code slash command for natural Korean writing — anti-AI ruleset, 6 au
 
 ---
 
+## 📸 Screenshots
+
+![Interactive Menu](screenshots/1-menu.png)
+*Genre selection, author style, output format*
+
+![Outline](screenshots/2-outline.png)
+*Structured outline with section breakdown*
+
+![Verification](screenshots/4-verification.png)
+*Character count via `wc -m`, style checklist, spellcheck*
+
+---
+
 ## ✨ Features
 
 - **Interactive writing session** — genre routing: essay / fiction / academic / copy / technical / free

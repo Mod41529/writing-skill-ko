@@ -30,7 +30,7 @@ A Claude Code slash command for natural Korean writing — anti-AI ruleset, 6 au
 - **Pass 3 spellcheck** — auto-correction via grep detection + sed substitution, no external API
 - **`--verify`** — quantitative style indicator comparison (분석어 / 감각어 / 비유 / 고유명사 / 독자질문 / 열린결말)
 - **`--series`** — tone consistency mode with local file-based context across episodes
-- **Output formats** — Markdown / Word (pandoc) / PDF (Typst)
+- **Output formats** — Markdown / Word (pandoc) / PDF (Typst, 4 templates included)
 - **Standalone** — no vault, no external API dependency
 
 ---
@@ -38,13 +38,19 @@ A Claude Code slash command for natural Korean writing — anti-AI ruleset, 6 au
 ## 🚀 Installation
 
 ```bash
-# 1. Download
+# Basic install (skill only)
 curl -o ~/.claude/commands/writing.md \
   https://raw.githubusercontent.com/Mod41529/writing-skill-ko/main/writing.md
 
-# 2. Run in Claude Code
-/writing
+# Full install (skill + Typst PDF templates)
+git clone https://github.com/Mod41529/writing-skill-ko.git
+cp writing-skill-ko/writing.md ~/.claude/commands/
+mkdir -p ~/.claude/writing-templates
+cp writing-skill-ko/templates/* ~/.claude/writing-templates/
 ```
+
+> Typst templates require [Typst](https://typst.app/) to be installed.
+> `winget install --id Typst.Typst` / `brew install typst` / `cargo install typst-cli`
 
 ---
 
@@ -79,6 +85,7 @@ curl -o ~/.claude/commands/writing.md \
 | **하루키** | 담담한 1인칭, 고유명사(음악·음식), 열린 결말 | 에세이, 단편 |
 | **롤링** | 밀착 3인칭+자유간접화법, 챕터 클리프행어 | 소설, 장편 |
 | **유시민** | 논증 구조, 독자 질문, 지적 유머 | 칼럼, 논설 |
+| **김훈** | 단문 명사 종결, 역사·전쟁·자연, 한자어 밀도 | 소설, 역사 에세이 |
 
 ---
 
@@ -136,7 +143,8 @@ echo "$TEXT" | sed -E \
 | `--outline` | Generate structure first, then draft |
 | `--draft` | Skip to draft immediately |
 | `--polish` | Fix pasted text (preserve meaning, fix style) |
-| `--style {name}` | Set author style (luma / 이외수 / 한강 / 하루키 / 롤링 / 유시민) |
+| `--style {name}` | Set author style (luma / 이외수 / 한강 / 하루키 / 롤링 / 유시민 / 김훈) |
+| `--polish --style` | Transform pasted text to specified author's style |
 | `--series {name}` | Series mode — load/update local context file |
 | `--verify` | Run quantitative + blind style verification |
 | `--save` | Save output to `~/writing-output/{genre}/` |

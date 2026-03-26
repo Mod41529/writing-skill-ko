@@ -37,7 +37,7 @@
   ),
 )
 
-#set text(font: ("Noto Sans CJK KR", "Noto Sans CJK SC", "Noto Sans", "sans-serif"), size: 10.5pt)
+#set text(font: ("Noto Sans CJK KR", "Malgun Gothic", "NanumBarunGothic", "Noto Sans", "sans-serif"), size: 10.5pt)
 #set par(leading: 1.5em, justify: true)
 
 #show heading.where(level: 1): it => block(above: 1.1em, below: 0.55em)[
@@ -58,7 +58,7 @@
   inset: 8pt,
   radius: 2pt,
 )[
-  #set text(font: ("Cascadia Mono", "Consolas", "Noto Sans Mono CJK KR", "monospace"), size: 9pt, fill: white)
+  #set text(font: ("Consolas", "Cascadia Code", "Courier New", "monospace"), size: 9pt, fill: white)
   #it
 ]
 
@@ -67,7 +67,7 @@
   inset: (x: 4pt, y: 1.5pt),
   radius: 1.5pt,
 )[
-  #set text(font: ("Cascadia Mono", "Consolas", "Noto Sans Mono CJK KR", "monospace"), size: 9pt, fill: rgb("#f0883e"))
+  #set text(font: ("Consolas", "Cascadia Code", "Courier New", "monospace"), size: 9pt, fill: rgb("#f0883e"))
   #it
 ]
 

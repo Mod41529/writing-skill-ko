@@ -14,7 +14,7 @@
 )
 
 #set text(
-  font: ("NanumMyeongjo", "HCR Batang", "Noto Serif CJK KR", "Noto Serif CJK SC", "serif"),
+  font: ("NanumMyeongjo", "Batang", "Noto Serif CJK KR", "Noto Serif CJK SC", "serif"),
   size: 11pt,
 )
 

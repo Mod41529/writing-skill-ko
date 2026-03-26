@@ -30,7 +30,7 @@
   footer: context align(right, text(size: 9pt, counter(page).display("1"))),
 )
 
-#set text(font: ("Noto Sans CJK KR", "Noto Sans CJK SC", "Noto Sans", "sans-serif"), size: 11pt)
+#set text(font: ("Noto Sans CJK KR", "Malgun Gothic", "NanumBarunGothic", "Noto Sans", "sans-serif"), size: 11pt)
 #set par(leading: 1.6em, justify: true)
 
 #show heading.where(level: 1): it => block(above: 1.1em, below: 0.55em)[

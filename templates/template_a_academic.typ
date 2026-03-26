@@ -13,14 +13,19 @@
   footer: context align(center, text(size: 9pt, counter(page).display("1"))),
 )
 
-#set text(font: ("Noto Sans CJK KR", "Noto Sans CJK SC", "Noto Sans", "sans-serif"), size: 10pt)
+#set text(font: ("Noto Sans CJK KR", "Malgun Gothic", "NanumBarunGothic", "Noto Sans", "sans-serif"), size: 10pt)
 #set par(leading: 1.4em, justify: true)
 
-#show heading.where(level: 1): it => block(above: 1em, below: 0.45em)[
-  #text(size: 11pt, weight: "bold")[
-    #counter(heading).display("I.") #h(0.5em) #it.body
+#let sec-num = state("sec-num", 0)
+
+#show heading.where(level: 1): it => {
+  sec-num.update(n => n + 1)
+  context block(above: 1em, below: 0.45em)[
+    #text(size: 11pt, weight: "bold")[
+      #numbering("I.", sec-num.get()) #h(0.5em) #it.body
+    ]
   ]
-]
+}
 
 #align(center)[
   #text(size: 16pt, weight: "bold")[#doc-title]
